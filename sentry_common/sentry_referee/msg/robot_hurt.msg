@@ -1,0 +1,2 @@
+uint8 armor_id
+uint8 HP_deduction_reason

@@ -1,0 +1,28 @@
+#机器人几何参，如果机器人是圆形，设置 robot_radius,如果是其他形状设置 footprint
+robot_radius: 0.2 #圆形
+
+transform_tolerance: 0.2
+
+obstacle_layer:
+ enabled: true
+ obstacle_range: 5.0
+ raytrace_range: 5.5
+ inflation_radius: 0.2
+ track_unknown_space: false
+ combination_method: 1
+
+ observation_sources: scan
+ scan: {sensor_frame: body_2d, data_type: LaserScan, topic: /scan, marking: true, clearing: true, inf_is_valid: true, observation_keep_time: 0.1}
+
+#  observation_sources: pointcloud2_sensor
+#  pointcloud2_sensor: {data_type: PointCloud2, topic: /icp_pointcloud, marking: true, clearing: true}
+
+
+inflation_layer:
+  enabled:              true
+  cost_scaling_factor:  8.0  # exponential rate at which the obstacle cost drops off (default: 10)
+  inflation_radius:     0.2  # max. distance from an obstacle at which costs are incurred for planning paths.
+
+static_layer:
+  enabled:              true
+  map_topic:            "/map"

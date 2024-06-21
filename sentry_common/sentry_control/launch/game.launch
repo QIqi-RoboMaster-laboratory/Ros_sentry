@@ -1,0 +1,10 @@
+<launch>
+	<include file="$(find livox_ros_driver2)/launch_ROS1/msg_MID360.launch">
+	<include file="$(find fast_lio_localization)/launch/sentry_localize.launch">
+    <include file="$(find sentry_nav)/launch/sentry_movebase.launch">
+
+    <node pkg="sentry_send" type="sentry_send" name="sentry_send" output="screen" />
+    <!-- <node pkg="sentry_receive" type="sentry_receive" name="sentry_receive" output="screen" />
+    <node pkg="sentry_control" type="sentry_control" name="sentry_control" output="screen" /> -->
+    
+</launch>
